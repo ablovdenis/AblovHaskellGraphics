@@ -72,8 +72,9 @@ executable task3
         Math.Vector
         MyGraphics.Figure
         MyGraphics.ThickLine
-        MyGraphics.ToLeftCoordSyst
         Parsing.BtnOpen_click
+        Utils.Clip
+        Utils.MapStrict
         Utils.Transliteration
 
     -- LANGUAGE extensions used by modules in this package.

@@ -1,10 +1,10 @@
-module MyGraphics.ThickLine (thickLine, thickBrokenLine) where
+module MyGraphics.ThickLine (thickLine, thickBrokenLine, thickBrokenLinePairs) where
 
 
 
 import Math.Vector (Vec2(..))
 
-import Graphics.Gloss ( Picture(Pictures, Polygon, Blank) )
+import Graphics.Gloss (Picture(Pictures, Polygon))
 
 
 -- Это функция, создающая линию толщиной thickness.
@@ -34,11 +34,27 @@ thickLine thickness v0 v = Polygon listPoints
         dxOB = ticDiv2 * sinAlph
         dyOB = - (ticDiv2 * cosAlph)
 
--- Это функция, создающая ломанную толщиной thickness.
+-- Это функция, создающая ломанную толщиной thickness (реализация через хвостовую рекурсию).
 thickBrokenLine :: Float -> [Vec2] -> Picture
-thickBrokenLine thickness lst_vec2 = Pictures $ helpFunc lst_vec2
+thickBrokenLine thickness lst_vec2 = Pictures $ helpFunc lst_vec2 []
   where
-    helpFunc [v0, v] = [thickLine thickness v0 v]
-    helpFunc (v0 : otherPoints@(v : _)) =
-      thickLine thickness v0 v : helpFunc otherPoints
-    helpFunc _ = [Blank]
+    helpFunc (v0 : otherPoints@(v : _)) accum =
+      helpFunc otherPoints (thickLine thickness v0 v : accum)
+    helpFunc _ accum = accum
+
+-- -- Это функция, создающая ломанную толщиной thickness.
+-- thickBrokenLine :: Float -> [Vec2] -> Picture
+-- thickBrokenLine thickness lst_vec2 = Pictures $ helpFunc lst_vec2
+--   where
+--     helpFunc [v0, v] = [thickLine thickness v0 v]
+--     helpFunc (v0 : otherPoints@(v : _)) =
+--       thickLine thickness v0 v : helpFunc otherPoints
+--     helpFunc _ = []
+
+-- Эта функция, создающая отрезки толщиной thickness по точкам их концов.
+thickBrokenLinePairs :: Float -> [(Vec2, Vec2)] -> Picture
+thickBrokenLinePairs thickness lst_pairs = Pictures $ helpFunc lst_pairs []
+  where
+    helpFunc [] accum = accum
+    helpFunc ((v0, v) : otherLine) accum =
+      helpFunc otherLine (thickLine thickness v0 v : accum)

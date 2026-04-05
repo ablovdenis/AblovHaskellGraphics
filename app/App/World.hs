@@ -3,52 +3,113 @@ module App.World where
 
 
 import Math.Matrix (Mat3(..))
-import MyGraphics.Figure (MyPath(..))
+import MyGraphics.Figure (Model(..))
 
 
-data World = World Float -- Ширина окна.
-                   Float -- Высота окна.
-                   [MyPath] -- Хранит картинку в виде списка
-                               -- конфигурационных объектов.
-                   Mat3 -- Матрица, в которой накапливаются все преобразования.
-                   (Float, Float) -- Размер изображения (Vx и Vy).
-
-
-get_width :: World -> Float
-get_width (World w _ _ _ _) = w
-
-
-get_height :: World -> Float
-get_height (World _ h _ _ _) = h
-
-
-get_mypath_list :: World -> [MyPath]
-get_mypath_list (World _ _ mp_lst _ _) = mp_lst
-
-
-get_T_matrix :: World -> Mat3
-get_T_matrix (World _ _ _ t_ _) = t_
-
-
-get_frame_size :: World -> (Float, Float)
-get_frame_size (World _ _ _ _ frame_size) = frame_size
+data World = World {
+                   width_ :: Float,     -- Ширина окна.
+                   height_ :: Float,    -- Высота окна.
+                   _vx_ :: Float,       -- Размер рисунка по горизонтали.
+                   _vy_ :: Float,       -- Размер рисунка по вертикали.
+                   aspectFig_ :: Float, -- Соотношение сторон рисунка.
+                   models_ :: [Model],  -- Описание списка рисунков.
+                   _t_ :: Mat3,         -- Матрица, в которой накапливаются все преобразования.
+                   initT_ :: Mat3,      -- Матрица начального преобразования.
+                   left_ :: Int,
+                   right_ :: Int,
+                   top_ :: Int,
+                   bottom_ :: Int       -- Расстояния до границ окна.
+                   } deriving (Show)
 
 
 change_width_world :: Float -> World -> World
-change_width_world w (World _ h mp_lst t_ frame_size) = World w h mp_lst t_ frame_size
+change_width_world width1
+  (World _ height0
+         _vx0 _vy0
+         aspectFig0
+         models0
+         _t0 initT0
+         left0 right0 top0 bottom0) =
+  World width1 height0
+        _vx0 _vy0
+        aspectFig0
+        models0
+        _t0 initT0
+        left0 right0 top0 bottom0
 
 
 change_height_world :: Float -> World -> World
-change_height_world h (World w _ mp_lst t_ frame_size) = World w h mp_lst t_ frame_size
-
-
-change_mp_lst_world :: [MyPath] -> World -> World
-change_mp_lst_world mp_lst (World w h _ t_ frame_size) = World w h mp_lst t_ frame_size
-
-
-change_T_matrix_world :: Mat3 -> World -> World
-change_T_matrix_world t_ (World w h mp_lst _ frame_size) = World w h mp_lst t_ frame_size
-
+change_height_world height1
+  (World width0 _
+         _vx0 _vy0
+         aspectFig0
+         models0
+         _t0 initT0
+         left0 right0 top0 bottom0) =
+  World width0 height1
+        _vx0 _vy0
+        aspectFig0
+        models0
+        _t0 initT0
+        left0 right0 top0 bottom0
 
 change_frame_size_world :: (Float, Float) -> World -> World
-change_frame_size_world frame_size (World w h mp_lst t_ _) = World w h mp_lst t_ frame_size
+change_frame_size_world (_vx1, _vy1)
+  (World width0 height0
+         _ _
+         aspectFig0
+         models0
+         _t0 initT0
+         left0 right0 top0 bottom0) =
+  World width0 height0
+        _vx1 _vy1
+        aspectFig0
+        models0
+        _t0 initT0
+        left0 right0 top0 bottom0
+
+change_models_world :: [Model] -> World -> World
+change_models_world models1
+  (World width0 height0
+         _vx0 _vy0
+         aspectFig0
+         _
+         _t0 initT0
+         left0 right0 top0 bottom0) =
+  World width0 height0
+        _vx0 _vy0
+        aspectFig0
+        models1
+        _t0 initT0
+        left0 right0 top0 bottom0
+
+
+change_T_world :: Mat3 -> World -> World
+change_T_world _t1
+  (World width0 height0
+         _vx0 _vy0
+         aspectFig0
+         models0
+         _ initT0
+         left0 right0 top0 bottom0) =
+  World width0 height0
+        _vx0 _vy0
+        aspectFig0
+        models0
+        _t1 initT0
+        left0 right0 top0 bottom0
+
+change_initT_world :: Mat3 -> World -> World
+change_initT_world initT1
+  (World width0 height0
+         _vx0 _vy0
+         aspectFig0
+         models0
+         _t0 _
+         left0 right0 top0 bottom0) =
+  World width0 height0
+        _vx0 _vy0
+        aspectFig0
+        models0
+        _t0 initT1
+        left0 right0 top0 bottom0

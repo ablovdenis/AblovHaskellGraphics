@@ -1,0 +1,547 @@
+frame 20 10 # размеры всего изображения из расчета одна единица - две клетки
+# первый рисунок
+
+pushTransform
+
+################# Сетка.
+
+model 0.5 0.5 1 1
+
+color 0 0 0
+thickness 1
+path 5
+0 0
+0 1
+1 1
+1 0
+0 0
+
+translate 1 1
+figure
+
+translate 2 0
+figure
+
+translate 2 0
+figure
+
+translate 2 0
+figure
+
+translate 2 0
+figure
+
+translate 2 0
+figure
+
+translate 2 0
+figure
+
+translate 2 0
+figure
+
+translate 2 0
+figure
+
+translate 2 0
+figure
+
+popTransform
+pushTransform
+
+translate 1 3
+figure
+
+translate 2 0
+figure
+
+translate 2 0
+figure
+
+translate 2 0
+figure
+
+translate 2 0
+figure
+
+translate 2 0
+figure
+
+translate 2 0
+figure
+
+translate 2 0
+figure
+
+translate 2 0
+figure
+
+translate 2 0
+figure
+
+popTransform
+pushTransform
+
+translate 1 5
+figure
+
+translate 2 0
+figure
+
+translate 2 0
+figure
+
+translate 2 0
+figure
+
+translate 2 0
+figure
+
+translate 2 0
+figure
+
+translate 2 0
+figure
+
+translate 2 0
+figure
+
+translate 2 0
+figure
+
+translate 2 0
+figure
+
+popTransform
+pushTransform
+
+translate 1 7
+figure
+
+translate 2 0
+figure
+
+translate 2 0
+figure
+
+translate 2 0
+figure
+
+translate 2 0
+figure
+
+translate 2 0
+figure
+
+translate 2 0
+figure
+
+translate 2 0
+figure
+
+translate 2 0
+figure
+
+translate 2 0
+figure
+
+popTransform
+pushTransform
+
+translate 1 9
+figure
+
+translate 2 0
+figure
+
+translate 2 0
+figure
+
+translate 2 0
+figure
+
+translate 2 0
+figure
+
+translate 2 0
+figure
+
+translate 2 0
+figure
+
+translate 2 0
+figure
+
+translate 2 0
+figure
+
+translate 2 0
+figure
+
+################# Сетка.
+
+popTransform
+pushTransform
+
+model 4.25 4.25 17 17 # 8.5 8.5
+
+# голова
+color 255 0 0 # цвет красный
+thickness 2   # толщина 2
+path 23       # 23 точки (22 отрезка)
+0.5 3. # от левой щеки вверх до уха
+1. 4.5 # левое ухо слева снизу вверх
+0.5 6. # левое ухо слева
+0.5  7.5 # левое ухо верх слева
+1. 8. # левое ухо верх середина
+1.5 8. # левое ухо верх справа
+2. 7.5 # левое ухо справа сверху вниз
+1.5  6. # левое ухо справа до макушки
+1.5 4.5 # макушка
+3. 4.5 # правое ухо слева снизу вверх
+3. 6. # правое ухо слева
+2.5 7.5 # правое ухо верх слева
+3. 8. # правое ухо верх середина
+3.5 8. # правое ухо верх справа
+4. 7.5 # правое ухо сверху вниз
+4. 6. # правое ухо справа
+3.5 4.5 # от правого уха вниз до щеки
+4. 3. # правая скула
+3.5 1.5 # подбородок справа
+2.5 1. # подбородок снизу
+2. 1. # подбородок слева
+1. 1.5 # левая скула
+0.5 3.
+
+# туловище
+color 120 120 120 # цвет серый
+thickness 3     # толщина 3
+path 22         # 22 точки (21 отрезок)
+4. 3. # спина от головы вправо
+5.5 3.5 # спина верх
+7. 3.5 # спина сверху до хвоста
+7.5 2.5 # хвост сверху
+8. 2.5 # хвост справа
+8. 2. # хвост низ справа налево
+7.5 2. # задняя нога справа сверху вниз
+7.5 0.5 # задняя нога низ
+6.5 0.5 # задняя нога слева
+6.5 1. # между задних ног
+6. 1. # левая задняя нога справа
+6. 0.5 # левая задняя нога низ
+5. 0.5 # левая задняя нога слева
+5. 1. # между задними и передними ногами
+4. 1. # правая передняя нога справа
+4. 0.5 # правая передняя нога низ
+3. 0.5 # правая передняя нога слева
+3. 1. # между передних ног
+2.5 1. # передняя нога справа
+2.5 0.5 # передняя нога низ
+1.5 0.5 # передняя нога слева
+1.5 1.25  
+
+# глаза
+color 0 255 0 # цвет зеленый
+thickness 4   # толщина 4
+
+# левый глаз
+path 5
+1.5 3.5 # левый глаз слева сверху вниз
+1.5 3. # левый глаз низ
+2.  3. # левый глаз справа
+2. 3.5 # левый глаз верх
+1.5 3.5
+
+# правый глаз
+path 5
+2.5 3.5 # правый глаз слева
+2.5 3. # правый глаз снизу
+3. 3. # правый глаз справа
+3. 3.5 # правый глаз сверху
+2.5 3.5  
+
+# ушные раковины
+color 0 0 0 # цвет черный
+thickness 2   # толщина 2
+
+# левая ушная раковина
+path 2
+1. 5.5 
+1. 7.
+
+# правая ушная раковина
+path 2
+3.5 5.5 
+3.5 7.
+
+# нос
+color 0 0 255 # цвет синий
+thickness 3   # толщина 3
+path 4
+2. 2.5 # нос сверху
+2.5 2.5 # нос справа
+2.25 2. # нос слева 
+2. 2.5
+
+rotate 180
+pushTransform
+translate 0 4
+translate 10 5
+figure
+
+popTransform
+pushTransform
+translate 0 -4
+translate 10 5
+figure
+
+popTransform
+rotate 60
+pushTransform
+translate 0 4
+rotate 60
+translate 10 5
+figure
+
+popTransform
+pushTransform
+translate 0 -4
+rotate 60
+translate 10 5
+figure
+
+popTransform
+rotate 60
+pushTransform
+translate 0 4
+rotate 120
+translate 10 5
+figure
+
+popTransform
+translate 0 -4
+rotate 120
+translate 10 5
+figure
+
+popTransform
+
+# МУХОМОР:
+model 2.5 3.5 9 14 # 4.5 7
+
+thickness 2
+
+color 0 255 0 # Трава.
+path 22
+1.0 0.0
+0.5 0.5
+1.25 0.5
+0.75 1.0
+1.25 0.75
+1.25 1.25
+1.5 0.75
+1.5 1.75
+1.75 0.75
+2.0 0.25
+2.5 0.0
+3.0 0.25
+3.25 0.75
+3.5 1.75
+3.5 0.75
+3.75 1.25
+3.75 0.75
+4.25 1.0
+3.75 0.5
+4.5 0.5
+4.0 0.0
+1.0 0.0
+
+
+color 255 0 0 # Внешний контур гриба.
+path 18
+1.75 0.75
+2.0 2.0
+1.5 2.0
+0.75 2.25
+0.25 2.75
+0.25 3.5
+0.75 4.0
+2.0 6.75
+2.25 7.0
+2.75 7.0
+3.0 6.75
+4.25 4.0
+4.75 3.5
+4.75 2.75
+4.25 2.25
+3.5 2.0
+3.0 2.0
+3.25 0.75
+
+
+color 128 128 128 # Внутреннее кольцо гриба.
+path 12
+1.917 2.25
+1.5 2.25
+1.0 2.5
+0.5 3.0
+1.0 3.5
+1.75 3.75
+3.25 3.75
+4.0 3.5
+4.5 3.0
+4.0 2.5
+3.25 2.25
+3.083 2.25
+
+
+color 255 255 255 # Верхняя часть ножки гриба.
+path 6
+2.0 2.0
+1.75 2.75
+2.25 3.0
+2.75 3.0
+3.25 2.75
+3.0 2.0
+
+
+color 0 0 255 # Лучи, выходящие от верхней части ножки гриба.
+path 2
+1.75 2.75
+0.75 3.25
+
+path 2
+2.0 2.875
+1.5 3.667
+
+path 2
+2.25 3.0
+2.0 3.75
+
+path 2
+2.5 3.0
+2.5 3.75
+
+path 2
+2.75 3.0
+3.0 3.75
+
+path 2
+3.0 2.875
+3.5 3.667
+
+path 2
+3.25 2.75
+4.25 3.25
+
+
+color 255 0 0 # Пятна около контура.
+path 3
+0.25 3.0
+0.5 3.25
+0.25 3.5
+
+path 5
+0.5 3.75
+1.0 3.75
+1.25 4.0
+1.25 4.25
+1.0 4.5
+
+path 7
+1.75 6.25
+2.0 6.0
+2.25 6.0
+2.5 6.25
+2.5 6.5
+2.25 6.75
+2.0 6.75
+
+path 4
+4.25 4.0
+4.0 3.75
+4.25 3.5
+4.75 3.5
+
+path 6
+1.75 3.75
+1.5 4.0
+1.75 4.25
+2.0 4.25
+2.25 4.0
+2.0 3.75
+
+
+path 9 # Пятна в середине.
+1.5 4.75
+1.75 4.5
+2.0 4.5
+2.25 4.75
+2.25 5.0
+2.0 5.25
+1.75 5.25
+1.5 5.0
+1.5 4.75
+
+path 9
+2.5 5.5
+2.75 5.25
+3.0 5.25
+3.25 5.5
+3.25 5.75
+3.0 6.0
+2.75 6.0
+2.5 5.75
+2.5 5.5
+
+path 9
+2.75 4.75
+3.0 5.0
+3.5 5.0
+3.75 4.75
+3.75 4.25
+3.5 4.0
+3.0 4.0
+2.75 4.25
+2.75 4.75
+
+pushTransform
+translate 4 0
+translate 10 5
+figure
+
+popTransform
+pushTransform
+translate -4 0
+translate 10 5
+figure
+
+popTransform
+rotate 60
+pushTransform
+translate 4 0
+rotate 60
+translate 10 5
+figure
+
+popTransform
+pushTransform
+translate -4 0
+rotate 60
+translate 10 5
+figure
+
+popTransform
+rotate 60
+pushTransform
+translate 4 0
+rotate 120
+translate 10 5
+figure
+
+popTransform
+pushTransform
+translate -4 0
+rotate 120
+translate 10 5
+figure

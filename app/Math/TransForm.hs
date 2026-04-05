@@ -16,8 +16,8 @@ my_scale sx_ sy_ = ((change_coord_mat3 0 0 sx_) .
 
 
 my_rotate :: Float -> Mat3 -- Получить матрицу поворота.
-my_rotate theta = Mat3 (Vec3 cos_theta sin_theta 0)
-                       (Vec3 (-sin_theta) cos_theta 0)
+my_rotate theta = Mat3 (Vec3 cos_theta (-sin_theta) 0)
+                       (Vec3 sin_theta cos_theta 0)
                        (Vec3 0 0 1)
   where
     cos_theta = cos theta
