@@ -183,7 +183,7 @@ figure
 popTransform
 pushTransform
 
-model 4.25 4.25 17 17 # 8.5 8.5
+model 4.25 4.25 8.5 8.5
 
 # голова
 color 255 0 0 # цвет красный
@@ -285,12 +285,14 @@ path 4
 
 rotate 180
 pushTransform
+scale 0.5
 translate 0 4
 translate 10 5
 figure
 
 popTransform
 pushTransform
+scale 0.5
 translate 0 -4
 translate 10 5
 figure
@@ -298,6 +300,7 @@ figure
 popTransform
 rotate 60
 pushTransform
+scale 0.5
 translate 0 4
 rotate 60
 translate 10 5
@@ -305,6 +308,7 @@ figure
 
 popTransform
 pushTransform
+scale 0.5
 translate 0 -4
 rotate 60
 translate 10 5
@@ -313,12 +317,14 @@ figure
 popTransform
 rotate 60
 pushTransform
+scale 0.5
 translate 0 4
 rotate 120
 translate 10 5
 figure
 
 popTransform
+scale 0.5
 translate 0 -4
 rotate 120
 translate 10 5
@@ -327,7 +333,7 @@ figure
 popTransform
 
 # МУХОМОР:
-model 2.5 3.5 9 14 # 4.5 7
+model 2.5 3.5 4.5 7
 
 thickness 2
 
@@ -506,12 +512,14 @@ path 9
 2.75 4.75
 
 pushTransform
+scale 0.75
 translate 4 0
 translate 10 5
 figure
 
 popTransform
 pushTransform
+scale 0.75
 translate -4 0
 translate 10 5
 figure
@@ -519,6 +527,7 @@ figure
 popTransform
 rotate 60
 pushTransform
+scale 0.75
 translate 4 0
 rotate 60
 translate 10 5
@@ -526,6 +535,7 @@ figure
 
 popTransform
 pushTransform
+scale 0.75
 translate -4 0
 rotate 60
 translate 10 5
@@ -534,6 +544,7 @@ figure
 popTransform
 rotate 60
 pushTransform
+scale 0.75
 translate 4 0
 rotate 120
 translate 10 5
@@ -541,6 +552,7 @@ figure
 
 popTransform
 pushTransform
+scale 0.75
 translate -4 0
 rotate 120
 translate 10 5
