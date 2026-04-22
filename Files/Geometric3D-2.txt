@@ -1,0 +1,328 @@
+# установка камеры в точку (10,5,5) направленной в точку (10,5,0)
+# с направлением вверх (0,1,0)
+camera 10 5 5 10 5 0 0 1 0
+# установка окна с углом обзора 90 градусов
+# с соотношением сторон 2:1 на расстоянии 5 от наблюдателя (от камеры)
+# расстояние до горизонта - 20
+screen 90 2 5 20
+
+pushTransform
+
+################# Сетка.
+
+model 0.5 0.5 0 1 1 1
+
+color 0 0 0
+thickness 1
+path 5
+0 0 0
+0 1 0
+1 1 0
+1 0 0
+0 0 0
+
+translate 1 1 0
+figure
+
+translate 2 0 0
+figure
+
+translate 2 0 0
+figure
+
+translate 2 0 0
+figure
+
+translate 2 0 0
+figure
+
+translate 2 0 0
+figure
+
+translate 2 0 0
+figure
+
+translate 2 0 0
+figure
+
+translate 2 0 0
+figure
+
+translate 2 0 0
+figure
+
+popTransform
+pushTransform
+
+translate 1 3 0
+figure
+
+translate 2 0 0
+figure
+
+translate 2 0 0
+figure
+
+translate 2 0 0
+figure
+
+translate 2 0 0
+figure
+
+translate 2 0 0
+figure
+
+translate 2 0 0
+figure
+
+translate 2 0 0
+figure
+
+translate 2 0 0
+figure
+
+translate 2 0 0
+figure
+
+popTransform
+pushTransform
+
+translate 1 5 0
+figure
+
+translate 2 0 0
+figure
+
+translate 2 0 0
+figure
+
+translate 2 0 0
+figure
+
+translate 2 0 0
+figure
+
+translate 2 0 0
+figure
+
+translate 2 0 0
+figure
+
+translate 2 0 0
+figure
+
+translate 2 0 0
+figure
+
+translate 2 0 0
+figure
+
+popTransform
+pushTransform
+
+translate 1 7 0
+figure
+
+translate 2 0 0
+figure
+
+translate 2 0 0
+figure
+
+translate 2 0 0
+figure
+
+translate 2 0 0
+figure
+
+translate 2 0 0
+figure
+
+translate 2 0 0
+figure
+
+translate 2 0 0
+figure
+
+translate 2 0 0
+figure
+
+translate 2 0 0
+figure
+
+popTransform
+pushTransform
+
+translate 1 9 0
+figure
+
+translate 2 0 0
+figure
+
+translate 2 0 0
+figure
+
+translate 2 0 0
+figure
+
+translate 2 0 0
+figure
+
+translate 2 0 0
+figure
+
+translate 2 0 0
+figure
+
+translate 2 0 0
+figure
+
+translate 2 0 0
+figure
+
+translate 2 0 0
+figure
+
+################# Сетка.
+
+popTransform
+pushTransform
+
+# КУБ ВМЕСТО ЗАЙЦА:
+
+color 0 0 0
+thickness 2
+
+model 0.5 0.5 0.5 1 1 1 
+path 10
+0 1 0
+1 1 0
+1 1 1
+0 1 1
+0 1 0
+0 0 0
+1 0 0
+1 0 1
+0 0 1
+0 1 1
+path 2
+0 0 0
+0 0 1
+path 2
+1 1 0
+1 0 0
+path 2
+1 1 1
+1 0 1
+
+rotate 180 1 1 1
+pushTransform
+scale 0.5
+translate 0 4 0
+translate 10 5 0
+figure
+
+popTransform
+pushTransform
+scale 0.5
+translate 0 -4 -4
+translate 10 5 -3
+figure
+
+popTransform
+rotate 60 0 0 1
+pushTransform
+scale 0.5
+translate 0 4 0
+rotate 60 0 0 1
+translate 10 5 -1
+figure
+
+popTransform
+pushTransform
+scale 0.5
+translate 0 -4 -2
+rotate 60 0 0 1
+translate 10 5 -3
+figure
+
+popTransform
+rotate 60 0 0 1
+pushTransform
+scale 0.5
+translate 0 4 0
+rotate 120 0 0 1
+translate 10 5 -1
+figure
+
+popTransform
+scale 0.5
+translate 0 -4 -2
+rotate 120 0 0 1
+translate 10 5 -3
+figure
+
+popTransform
+
+# ПИРАМИДА ВМЕСТО МУХОМОРА:
+color 0 0 0
+thickness 2
+
+model 0.5 0.433 0.4082 1 0.866 0.8165
+path 5
+0 0 0
+0.5 0.2887 0.8165
+1 0 0
+0.5 0.866 0
+0.5 0.2887 0.8165
+path 3
+0.5 0.866 0
+0 0 0
+1 0 0
+
+pushTransform
+scale 0.75
+translate 4 0 0
+translate 10 5 -2
+figure
+
+popTransform
+pushTransform
+scale 0.75
+translate -4 0 -2
+translate 10 5 -5
+figure
+
+popTransform
+rotate 60 1 1 1
+pushTransform
+scale 0.75
+translate 4 0 -4
+rotate 60 0 0 1
+translate 10 5 -1
+figure
+
+popTransform
+pushTransform
+scale 0.75
+translate -4 0 -4
+rotate 60 0 0 1
+translate 10 5 -3
+figure
+
+popTransform
+rotate 60 0 0 1
+pushTransform
+scale 0.75
+translate 4 0 0
+rotate 120 0 0 1
+translate 10 5 -1
+figure
+
+popTransform
+pushTransform
+scale 0.75
+translate -4 0 -2
+rotate 120 0 0 1
+translate 10 5 -5
+figure
